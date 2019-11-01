@@ -9,11 +9,50 @@
 
 /* HTML:
   <div class="carousel">
-    <div class="left-button"> < </div>
+    <div class="left-button">Left Button</div>
     <img src="./assets/carousel/mountains.jpeg" />
     <img src="./assets/carousel/computer.jpeg" />
     <img src="./assets/carousel/trees.jpeg" />
     <img src="./assets/carousel/turntable.jpeg" />
-    <div class="right-button"> > </div>
+    <div class="right-button">Right Button</div>
   </div>
 */
+
+function CarouselBuilder() {
+  //Elements
+  const carousel = document.createElement('div');
+  const leftButton = document.createElement('div');
+  const mountains = document.createElement('img');
+  const computer = document.createElement('img');
+  const trees = document.createElement('img');
+  const turntable = document.createElement('img');
+  const rightButton = document.createElement('div');
+
+  //Classes
+  carousel.classList.add('carousel');
+  leftButton.classList.add('left-button');
+  rightButton.classList.add('right-button');
+
+  //Text Content
+  leftButton.textContent = 'Left Button';
+  mountains.src = "./assets/carousel/mountains.jpeg";
+  computer.src = "./assets/carousel/computer.jpeg";
+  trees.src = "./assets/carousel/trees.jpeg";
+  turntable.src = "./assets/carousel/turntable.jpeg"
+  rightButton.textContent = "Right Button";
+
+  //Structure
+  carousel.appendChild(leftButton);
+  carousel.append(mountains);
+  carousel.append(computer);
+  carousel.append(trees);
+  carousel.append(turntable);
+  carousel.append(rightButton);
+
+  return carousel;
+
+}
+
+const carouselContainer = document.querySelector(".carousel-container");
+
+carouselContainer.appendChild(CarouselBuilder());
